@@ -58,17 +58,24 @@ permalink: "/contact/"
                         Whether you need a fence quoted, a deck designed, or a roof assessed, get in touch for a no-obligation quote. Robert personally handles all enquiries — you'll speak to the person doing the work, not a call centre. We service Central Auckland, East Auckland, and South Auckland. Robert aims to respond to all enquiries within one business day. If your job is urgent, give him a call directly.
                     </p>
                 </div>
-                <form id="cs-form-265" name="Contact Form" method="post">
+                <form id="cs-form-265" name="Contact Form" method="post" action="https://formsubmit.co/{{ client.email }}">
+                    <!--FormSubmit configuration: https://formsubmit.co/-->
+                    <input type="hidden" name="_subject" value="New Enquiry — 23-7 Builders Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="{% if client.isProduction %}{{ client.domain }}{% else %}http://localhost:8080{% endif %}/contact/thank-you/">
+                    <!--Honeypot spam trap, hidden from real users-->
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <label>
-                        Full name
+                        <span>Full name<span class="cs-required">*</span></span>
                         <input required type="text" id="name-265" name="name" placeholder="Full name">
                     </label>
                     <label>
-                        Email address
+                        <span>Email address<span class="cs-required">*</span></span>
                         <input required type="email" id="email-265" name="email" placeholder="Email address">
                     </label>
                     <label>
-                        Phone number
+                        <span>Phone number<span class="cs-required">*</span></span>
                         <input required type="tel" id="phone-265" name="phone" placeholder="Phone number">
                     </label>
                     <label>
@@ -76,9 +83,10 @@ permalink: "/contact/"
                         <input type="text" id="find-265" name="service-needed" placeholder="Fencing / Decking / Roofing / Other">
                     </label>
                     <label class="cs-label-message">
-                        Tell us about your project
+                        <span>Tell us about your project<span class="cs-required">*</span></span>
                         <textarea required name="Message" id="message-265" placeholder="Tell us about your project..."></textarea>
                     </label>
+                    <span class="cs-required-note"><span class="cs-required">*</span> Required field</span>
                     <button class="cs-button-solid cs-submit" type="submit">Send Enquiry</button>
                 </form>
             </div>

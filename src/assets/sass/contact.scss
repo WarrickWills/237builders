@@ -56,6 +56,20 @@
                 margin-bottom: clamp(2rem, 6.3vw, 3rem);
             }
 
+            .cs-required {
+                color: #d3273e;
+                margin-left: calc(2 / 16 * 1rem);
+            }
+
+            .cs-required-note {
+                width: 100%;
+                font-size: calc(14 / 16 * 1rem);
+                font-weight: 400;
+                color: var(--bodyTextColor);
+                margin-bottom: calc(16 / 16 * 1rem);
+                display: block;
+            }
+
             input,
             textarea {
                 font-size: calc(16 / 16 * 1rem);
@@ -345,6 +359,10 @@
                         /* lighten up the color of the text by 40%*/
                         filter: brightness(1.4);
                     }
+                }
+
+                .cs-required-note {
+                    color: var(--bodyTextColorWhite);
                 }
             }
 
