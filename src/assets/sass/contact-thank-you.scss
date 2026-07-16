@@ -1,0 +1,69 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE STYLES
+// Interior pages have their own stylesheet for styles that only exist on
+// that page. Any styles shared between pages, including repeated sections,
+// should go into root.scss
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---         Thank You          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cs-thank-you-1 {
+        /* extra breathing room since there's no banner above this section */
+        padding: clamp(5rem, 12vw, 8rem) 1rem;
+        text-align: center;
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(700 / 16 * 1rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-icon {
+            width: calc(72 / 16 * 1rem);
+            height: calc(72 / 16 * 1rem);
+            margin-bottom: calc(24 / 16 * 1rem);
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: calc(32 / 16 * 1rem);
+                height: calc(32 / 16 * 1rem);
+            }
+        }
+
+        .cs-topper {
+            margin-bottom: calc(8 / 16 * 1rem);
+        }
+
+        .cs-title {
+            margin-bottom: calc(16 / 16 * 1rem);
+        }
+
+        .cs-text {
+            /* 24px - 40px */
+            margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #cs-thank-you-1 {
+            .cs-text,
+            .cs-title {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+    }
+}
