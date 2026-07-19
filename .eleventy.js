@@ -79,6 +79,8 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("./src/_redirects"); // Redirect rules
 
+	eleventyConfig.addPassthroughCopy("./src/_headers"); // Custom response headers
+
 	// ═════════════════════════════════════════════════════════════════════════
 	// FILTERS
 	// Transform data in templates at build time
