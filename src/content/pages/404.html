@@ -1,0 +1,48 @@
+---
+title: "Page Not Found | 23-7 Builders"
+description: "The page you're looking for doesn't exist or has been moved. Head back to our homepage or browse our portfolio of Auckland fencing, deck, and roofing projects."
+permalink: "/404.html"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/404.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                       404                   -->
+    <!-- ============================================ -->
+
+    <section id="not-found-2501">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">404</span>
+                <h2 class="cs-title">Page Not Found</h2>
+                <p class="cs-text">The page you are looking for doesn't exist or has been moved.</p>
+                <div class="cs-button-box">
+                    <a href="/" class="cs-button-solid">Return To Home</a>
+                    <a href="/portfolio/" class="cs-button-solid">View Our Portfolio</a>
+                </div>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 640, height: 960 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 640, height: 960 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 640, height: 960 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1024, height: 1366 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1024, height: 1366 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1024, height: 1366 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/banner-fence.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" alt="completed Auckland fencing project" width="1920" height="1200" loading="eager" decoding="async">
+        </picture>
+    </section>
+
+{% endblock %}

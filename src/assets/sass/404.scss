@@ -1,0 +1,122 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE STYLES
+// Interior pages have their own stylesheet for styles that only exist on
+// that page. Any styles shared between pages, including repeated sections,
+// should go into root.scss
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---           404              -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+	#not-found-2501 {
+		height: 100dvh;
+		padding: calc(16/16 * 1rem);
+		overflow: hidden;
+		position: relative;
+
+		.cs-container {
+			width: 100%;
+			height: 100%;
+			padding: calc(16/16 * 1rem);
+			background-color: #f7f7f7;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			z-index: 1;
+
+			&:before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				background-image: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/rectangle.svg");
+				background-position: center;
+				background-size: auto;
+				background-repeat: repeat;
+				opacity: 0.4;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+			}
+		}
+
+		.cs-content {
+			/* set text align to left if content needs to be left aligned */
+			text-align: center;
+			width: 100%;
+			max-width: calc(1280/16 * 1rem);
+			display: flex;
+			flex-direction: column;
+			/* centers content horizontally, set to flex-start to left align */
+			align-items: center;
+			position: relative;
+			z-index: 3;
+		}
+
+		.cs-topper {
+            margin-bottom: calc(16/16 * 1rem);
+		}
+
+        .cs-title {
+            font-size: clamp(calc(39/16 * 1rem), 6vw, calc(61/16 * 1rem));
+            margin-bottom: calc(32/16 * 1rem);
+        }
+
+		.cs-text {
+			max-width: 30ch;
+			margin-bottom: calc(64/16 * 1rem);
+		}
+
+		.cs-button-box {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: clamp(calc(20/16 * 1rem), 3vw, calc(36/16 * 1rem));
+		}
+
+		.cs-background {
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+	body.dark-mode {
+		#not-found-2501 {
+			.cs-container {
+				background-color: var(--accent);
+			}
+
+			.cs-title,
+			.cs-text {
+				color: var(--bodyTextColorWhite);
+			}
+
+			.cs-topper {
+				color: var(--primaryLight);
+			}
+		}
+	}
+}
